@@ -1,8 +1,11 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+
 const PORT = process.env.port || 5000
 const app = express()
+const db = require('./models')
+db.sequelize.sync()
 
 const corsOptions = {
   origin: 'http://localhost:3000'
