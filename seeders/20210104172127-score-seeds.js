@@ -6,7 +6,7 @@ module.exports = {
       {
         difficulty: 'Easy',
         score: 7,
-        userId: 2,
+        userId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -20,14 +20,14 @@ module.exports = {
       {
         difficulty: 'Medium',
         score: 8,
-        userId: 3,
+        userId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         difficulty: 'Easy',
         score: 10,
-        userId: 3,
+        userId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       }
