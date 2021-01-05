@@ -9,10 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Score.belongsTo(models.User, {
-        foreignKey: 'userId',
-        onDelete: 'CASCADE'
-      })
+      // Score.belongsTo(models.User)
+      // foreignKey: 'userId',
+      // onDelete: 'CASCADE'
+      // })
     }
   }
   Score.init(

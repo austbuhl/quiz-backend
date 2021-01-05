@@ -43,7 +43,10 @@ Object.keys(db).forEach((modelName) => {
 db.sequelize = sequelize
 db.Sequelize = Sequelize
 
-db.scores = require('./score')(sequelize, Sequelize)
 db.users = require('./user')(sequelize, Sequelize)
+db.scores = require('./score')(sequelize, Sequelize)
+
+db.scores.belongsTo(db.users, { foreignKey: 'userId', onDelete: 'CASCADE' })
+db.users.hasMany(db.scores, { foreignKey: 'userId' })
 
 module.exports = db

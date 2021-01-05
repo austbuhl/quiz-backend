@@ -1,5 +1,6 @@
 const db = require('../models/index')
 const Score = db.scores
+const User = db.users
 
 exports.getScores = (req, res) => {
   Score.findAll()
