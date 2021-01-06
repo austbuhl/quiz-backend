@@ -3,7 +3,7 @@ const Score = db.scores
 const User = db.users
 
 exports.getScores = (req, res) => {
-  Score.findAll()
+  Score.findAll({ include: [{ all: true, nested: true }] })
     .then((data) => res.send(data))
     .catch((err) => console.log(err))
 }
