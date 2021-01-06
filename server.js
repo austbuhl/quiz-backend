@@ -4,7 +4,7 @@ const cors = require('cors')
 const db = require('./models')
 
 const app = express()
-const port = process.env.PORT
+const PORT = process.env.PORT
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -18,6 +18,6 @@ app.use('/scores', require('./routes/scores'))
 
 db.sequelize.sync()
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`)
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`)
 })
