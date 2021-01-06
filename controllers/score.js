@@ -9,9 +9,20 @@ exports.getScores = (req, res) => {
 }
 
 exports.create = (req, res) => {
-  Score.create({
-    difficulty: 'Easy',
-    score: 2,
-    userId: 3
+  const { username, score, difficulty } = req.body
+  User.findOrCreate({
+    where: { username: username }
   })
+    .then((user) => {
+      Score.create({
+        difficulty,
+        score,
+        userId: user[0].dataValues.id
+      }).then((newScore) => {
+        Score.findByPk(newScore.id, {
+          include: [{ all: true, nested: true }]
+        }).then((data) => res.send(data))
+      })
+    })
+    .catch((err) => console.log(err))
 }

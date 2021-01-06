@@ -5,6 +5,6 @@ const scoresController = require('../controllers/score')
 
 router.get('/', scoresController.getScores)
 
-// router.get('/', scoresController.create)
+router.post('/', scoresController.create)
 
 module.exports = router
