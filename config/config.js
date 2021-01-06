@@ -22,6 +22,7 @@ module.exports = {
     password: DB_PASSWORD,
     database: 'quiz_database_prod',
     host: DB_HOST,
-    dialect: 'postgres'
+    dialect: 'postgres',
+    use_env_variable: DATABASE_URL
   }
 }
